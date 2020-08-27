@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "651101086630",
+    "firebase_url": "https://foodorder-bee49.firebaseio.com",
+    "project_id": "foodorder-bee49",
+    "storage_bucket": "foodorder-bee49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651101086630:android:c17daff1a49667d6926567",
+        "android_client_info": {
+          "package_name": "com.example.foodorderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651101086630-d5jjon2jdosslp31g7h2gbqmsvvnrgoo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVL6EWeDrHOJLoV_VCqPzC-XRVlrZ-K7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651101086630-d5jjon2jdosslp31g7h2gbqmsvvnrgoo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
