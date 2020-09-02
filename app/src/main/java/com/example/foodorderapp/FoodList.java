@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +22,12 @@ import com.squareup.picasso.Picasso;
 
 public class FoodList extends AppCompatActivity {
 
-    FirebaseDatabase database;
-    DatabaseReference foodList;
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+
+    FirebaseDatabase database;
+    DatabaseReference foodList;
 
 
 
@@ -49,12 +52,13 @@ public class FoodList extends AppCompatActivity {
         //Get Intent here
         if (getIntent() != null)
             categoryId = getIntent().getStringExtra("CategoryId");
-        assert categoryId != null;
-        if (!categoryId.isEmpty()) loadListFood(categoryId);
+        if (!categoryId.isEmpty() && categoryId != null) {
+            loadListFood(categoryId);
+        }
     }
 
     private void loadListFood(String categoryID) {
-        FirebaseRecyclerOptions<Food>options = new FirebaseRecyclerOptions.Builder<Food>()
+        FirebaseRecyclerOptions<Food> options = new FirebaseRecyclerOptions.Builder<Food>()
                 .setQuery(foodList.orderByChild("menuId").equalTo(categoryID), Food.class)
                 .build();
 
@@ -69,6 +73,9 @@ public class FoodList extends AppCompatActivity {
                    @Override
                    public void onClick(View view, int position, boolean isLongClick) {
                        //Start New Activity
+                       Intent foodDetail = new Intent (FoodList.this, FoodDetail.class);
+                               foodDetail.putExtra("FoodId", adapter.getRef(position).getKey());
+                               startActivity(foodDetail);
 
                    }
                });
