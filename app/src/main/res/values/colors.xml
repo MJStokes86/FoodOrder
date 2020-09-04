@@ -10,4 +10,6 @@
     <color name="overlayBackground">#7f333639</color>
     <color name="overlayActionBar">#7f333639</color>
 
+    <color name = "colorPrimaryText">#050505</color>
+
 </resources>
